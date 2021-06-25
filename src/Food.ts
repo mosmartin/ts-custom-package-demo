@@ -8,10 +8,17 @@ export class Food {
     private readonly unit: string,
     private readonly baseValues: Nutrition
   ) {
+    this.validateFoodName(name);
+
+    this.validateFoodAmount(baseValues);
+  }
+  private validateFoodName(name: string) {
     if (name.length === 0) {
       throw new EmptyFoodNameError();
     }
+  }
 
+  private validateFoodAmount(baseValues: Nutrition) {
     if (baseValues.amount <= 0) {
       throw new InvalidFoodAmountError(baseValues.amount);
     }
