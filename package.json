@@ -43,7 +43,7 @@
       "^.+\\.ts$": "ts-jest"
     },
     "testMatch": [
-      "**/src/**/*.spec.ts"
+      "**/__tests__/**/*.spec.ts"
     ],
     "testEnvironment": "node",
     "verbose": true
