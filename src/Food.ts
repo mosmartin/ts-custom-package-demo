@@ -1,3 +1,4 @@
+import { InvalidFoodAmountError } from "./errors/InvalidFoodAmountError";
 import { EmptyFoodNameError } from "./errors/EmptyFoodNameError";
 import { Nutrition } from "./types/Nutrition";
 
@@ -9,6 +10,10 @@ export class Food {
   ) {
     if (name.length === 0) {
       throw new EmptyFoodNameError();
+    }
+
+    if (baseValues.amount <= 0) {
+      throw new InvalidFoodAmountError(baseValues.amount);
     }
   }
 
