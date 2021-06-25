@@ -12,13 +12,13 @@ export class Food {
 
     this.validateFoodAmount(baseValues);
   }
-  private validateFoodName(name: string) {
+  private validateFoodName(name: string): void {
     if (name.length === 0) {
       throw new EmptyFoodNameError();
     }
   }
 
-  private validateFoodAmount(baseValues: Nutrition) {
+  private validateFoodAmount(baseValues: Nutrition): void {
     if (baseValues.amount <= 0) {
       throw new InvalidFoodAmountError(baseValues.amount);
     }
